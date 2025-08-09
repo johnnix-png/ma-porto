@@ -11,7 +11,7 @@ const WorkGrid: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <button
             onClick={() => navigate('/video-edit')}
-            className="group rounded-lg border border-border bg-card/80 backdrop-blur p-8 text-left shadow hover:shadow-xl transition-all hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-ring"
+            className="group rounded-lg border border-border bg-card/80 backdrop-blur p-8 md:p-10 min-h-40 md:min-h-48 text-left shadow hover:shadow-xl transition-all hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-ring"
             aria-label="Open Video Edit portfolio"
           >
             <div className="flex items-center gap-3 mb-2">
@@ -23,7 +23,7 @@ const WorkGrid: React.FC = () => {
 
           <button
             onClick={() => navigate('/graphics')}
-            className="group rounded-lg border border-border bg-card/80 backdrop-blur p-8 text-left shadow hover:shadow-xl transition-all hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-ring"
+            className="group rounded-lg border border-border bg-card/80 backdrop-blur p-8 md:p-10 min-h-40 md:min-h-48 text-left shadow hover:shadow-xl transition-all hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-ring"
             aria-label="Open Graphics portfolio"
           >
             <div className="flex items-center gap-3 mb-2">

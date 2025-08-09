@@ -51,7 +51,7 @@ const VideoEdit: React.FC = () => {
   const [selected, setSelected] = useState<VideoItem | null>(null);
   const [tab, setTab] = useState<'long' | 'short'>('long');
 
-  const items = useMemo(() => VIDEO_CATEGORIES[tab], [tab]);
+  const allVideos = useMemo(() => [...VIDEO_CATEGORIES.long, ...VIDEO_CATEGORIES.short], []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -78,14 +78,14 @@ const VideoEdit: React.FC = () => {
             {selected ? (
               <Player url={selected.embedUrl} onClose={() => setSelected(null)} />
             ) : (
-              <VideoGallery items={VIDEO_CATEGORIES.long} onSelect={setSelected} />
+              <VideoGallery items={allVideos} onSelect={setSelected} />
             )}
           </TabsContent>
           <TabsContent value="short">
             {selected ? (
               <Player url={selected.embedUrl} onClose={() => setSelected(null)} />
             ) : (
-              <VideoGallery items={VIDEO_CATEGORIES.short} onSelect={setSelected} />
+              <VideoGallery items={allVideos} onSelect={setSelected} />
             )}
           </TabsContent>
         </Tabs>
