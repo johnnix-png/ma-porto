@@ -4,7 +4,7 @@ import { Instagram, Send, Mail, Music2 } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-border py-8">
+    <footer id="contact" className="border-t border-border py-8">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} — Your Name</p>
         <nav className="flex items-center gap-4">
