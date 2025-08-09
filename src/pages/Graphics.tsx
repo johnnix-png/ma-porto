@@ -41,7 +41,7 @@ const Lightbox: React.FC<{ src: string; alt: string; onClose: () => void }> = ({
 const Graphics: React.FC = () => {
   const [tab, setTab] = useState<'thumbnail' | 'poster' | 'logo'>('thumbnail');
   const [active, setActive] = useState<ImageItem | null>(null);
-  const allImages = useMemo(() => [...GRAPHIC_CATEGORIES.thumbnail, ...GRAPHIC_CATEGORIES.poster, ...GRAPHIC_CATEGORIES.logo], []);
+  const items = useMemo(() => GRAPHIC_CATEGORIES[tab], [tab]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -66,13 +66,13 @@ const Graphics: React.FC = () => {
             <TabsTrigger value="logo">Logo Design</TabsTrigger>
           </TabsList>
           <TabsContent value="thumbnail">
-            <ImageGrid items={allImages} onSelect={setActive} />
+            <ImageGrid items={items} onSelect={setActive} />
           </TabsContent>
           <TabsContent value="poster">
-            <ImageGrid items={allImages} onSelect={setActive} />
+            <ImageGrid items={items} onSelect={setActive} />
           </TabsContent>
           <TabsContent value="logo">
-            <ImageGrid items={allImages} onSelect={setActive} />
+            <ImageGrid items={items} onSelect={setActive} />
           </TabsContent>
         </Tabs>
       </main>

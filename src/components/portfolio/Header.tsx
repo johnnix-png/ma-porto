@@ -7,9 +7,6 @@ const Header: React.FC = () => {
         <a href="#work" className="story-link text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
           My Work
         </a>
-        <a href="#contact" className="story-link text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
-          Contact Me
-        </a>
       </div>
     </header>
   );

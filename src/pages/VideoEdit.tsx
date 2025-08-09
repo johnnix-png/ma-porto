@@ -29,12 +29,12 @@ const VideoGallery: React.FC<{ items: VideoItem[]; onSelect: (v: VideoItem) => v
   </div>
 );
 
-const Player: React.FC<{ url: string; onClose: () => void }> = ({ url, onClose }) => (
+const Player: React.FC<{ url: string; onClose: () => void; portrait?: boolean }> = ({ url, onClose, portrait }) => (
   <div className="relative">
     <button onClick={onClose} aria-label="Close player" className="absolute -top-4 -right-4 z-10 rounded-full bg-background/80 backdrop-blur border border-border p-2 shadow hover:opacity-90">
       <X className="h-5 w-5" />
     </button>
-    <div className="aspect-video w-full overflow-hidden rounded-lg border border-border bg-black">
+    <div className={`w-full overflow-hidden rounded-lg border border-border bg-black ${portrait ? 'aspect-[9/16]' : 'aspect-video'}`}>
       <iframe
         className="h-full w-full"
         src={url}
@@ -51,7 +51,7 @@ const VideoEdit: React.FC = () => {
   const [selected, setSelected] = useState<VideoItem | null>(null);
   const [tab, setTab] = useState<'long' | 'short'>('long');
 
-  const allVideos = useMemo(() => [...VIDEO_CATEGORIES.long, ...VIDEO_CATEGORIES.short], []);
+  const items = useMemo(() => VIDEO_CATEGORIES[tab], [tab]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -76,16 +76,16 @@ const VideoEdit: React.FC = () => {
           </TabsList>
           <TabsContent value="long">
             {selected ? (
-              <Player url={selected.embedUrl} onClose={() => setSelected(null)} />
+              <Player url={selected.embedUrl} onClose={() => setSelected(null)} portrait={false} />
             ) : (
-              <VideoGallery items={allVideos} onSelect={setSelected} />
+              <VideoGallery items={items} onSelect={setSelected} />
             )}
           </TabsContent>
           <TabsContent value="short">
             {selected ? (
-              <Player url={selected.embedUrl} onClose={() => setSelected(null)} />
+              <Player url={selected.embedUrl} onClose={() => setSelected(null)} portrait />
             ) : (
-              <VideoGallery items={allVideos} onSelect={setSelected} />
+              <VideoGallery items={items} onSelect={setSelected} />
             )}
           </TabsContent>
         </Tabs>
