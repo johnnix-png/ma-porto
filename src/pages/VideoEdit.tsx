@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { VIDEO_CATEGORIES, VideoItem } from '@/content/portfolioData';
 import Footer from '@/components/portfolio/Footer';
@@ -31,10 +31,18 @@ const VideoGallery: React.FC<{ items: VideoItem[]; onSelect: (v: VideoItem) => v
 
 const Player: React.FC<{ url: string; onClose: () => void; portrait?: boolean }> = ({ url, onClose, portrait }) => (
   <div className="relative">
-    <button onClick={onClose} aria-label="Close player" className="absolute -top-4 -right-4 z-10 rounded-full bg-background/80 backdrop-blur border border-border p-2 shadow hover:opacity-90">
+    <button
+      onClick={onClose}
+      aria-label="Close player"
+      className="absolute -top-4 -right-4 z-10 rounded-full bg-background/80 backdrop-blur border border-border p-2 shadow hover:opacity-90"
+    >
       <X className="h-5 w-5" />
     </button>
-    <div className={`w-full overflow-hidden rounded-lg border border-border bg-black ${portrait ? 'aspect-[9/16]' : 'aspect-video'}`}>
+    <div
+      className={`w-full overflow-hidden rounded-lg border border-border bg-black ${
+        portrait ? 'aspect-[16/9]' : 'aspect-video'
+      }`}
+    >
       <iframe
         className="h-full w-full"
         src={url}
@@ -53,18 +61,38 @@ const VideoEdit: React.FC = () => {
 
   const items = useMemo(() => VIDEO_CATEGORIES[tab], [tab]);
 
+  // Scroll to top when component mounts (initial load)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Scroll to top when tab changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [tab]);
+
+  // Scroll to top when video player opens or closes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selected]);
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Video Editing Portfolio — Long & Short Form</title>
-        <meta name="description" content="Browse long-form and short-form video editing work. Click a thumbnail to play the embedded video." />
+        <meta
+          name="description"
+          content="Browse long-form and short-form video editing work. Click a thumbnail to play the embedded video."
+        />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
 
       <header className="border-b border-border">
         <div className="container mx-auto px-6 py-6 flex items-center justify-between">
           <h1 className="text-xl md:text-2xl font-semibold">Video Edit</h1>
-          <a href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Home</a>
+          <a href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Home
+          </a>
         </div>
       </header>
 

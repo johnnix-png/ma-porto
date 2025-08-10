@@ -5,7 +5,7 @@ export type VideoItem = {
   embedUrl: string; // YouTube/Drive embed URL
 };
 
-export const HERO_VIDEO_URL = "/media/hero.mp4";
+export const HERO_VIDEO_URL = "/media/podcast edit v.1.mp4";
 
 export const SOCIAL_LINKS = {
   instagram: 'https://instagram.com/yourhandle',
@@ -19,8 +19,8 @@ export const VIDEO_CATEGORIES: Record<'long' | 'short', VideoItem[]> = {
     {
       id: 'yt1',
       title: 'Documentary Cut',
-      thumbUrl: 'https://images.unsplash.com/photo-1543525324-5e1d80f48b18?w=600&q=80&auto=format&fit=crop',
-      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      thumbUrl: 'https://i.imgur.com/fGdfUoD.jpeg',
+      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg'
     },
     {
       id: 'yt2',
@@ -28,13 +28,55 @@ export const VIDEO_CATEGORIES: Record<'long' | 'short', VideoItem[]> = {
       thumbUrl: 'https://images.unsplash.com/photo-1512427691650-1f9b7f2c8b5d?w=600&q=80&auto=format&fit=crop',
       embedUrl: 'https://www.youtube.com/embed/oHg5SJYRHA0',
     },
+     {
+      id: 'yt3',
+      title: 'Documentary Cut',
+      thumbUrl: 'https://images.unsplash.com/photo-1521939094609-93aba1af40d7?w=600&q=80&auto=format&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg'
+    },
+     {
+      id: 'yt4',
+      title: 'Documentary Cut',
+      thumbUrl: 'https://images.unsplash.com/photo-1521939094609-93aba1af40d7?w=600&q=80&auto=format&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg'
+    },
+     {
+      id: 'yt5',
+      title: 'Documentary Cut',
+      thumbUrl: 'https://images.unsplash.com/photo-1521939094609-93aba1af40d7?w=600&q=80&auto=format&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg'
+    },
+     {
+      id: 'yt6',
+      title: 'Documentary Cut',
+      thumbUrl: 'https://images.unsplash.com/photo-1521939094609-93aba1af40d7?w=600&q=80&auto=format&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg'
+    },
+     {
+      id: 'yt7',
+      title: 'Documentary Cut',
+      thumbUrl: 'https://images.unsplash.com/photo-1521939094609-93aba1af40d7?w=600&q=80&auto=format&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg'
+    },
+     {
+      id: 'yt8',
+      title: 'Documentary Cut',
+      thumbUrl: 'https://images.unsplash.com/photo-1521939094609-93aba1af40d7?w=600&q=80&auto=format&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg'
+    },
+     {
+      id: 'yt9',
+      title: 'Documentary Cut',
+      thumbUrl: 'https://images.unsplash.com/photo-1521939094609-93aba1af40d7?w=600&q=80&auto=format&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg'
+    },
   ],
   short: [
     {
       id: 'yt3',
       title: 'Reel — Travel',
       thumbUrl: 'https://images.unsplash.com/photo-1521939094609-93aba1af40d7?w=600&q=80&auto=format&fit=crop',
-      embedUrl: 'https://www.youtube.com/embed/EE-xtCF3T94',
+      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg'
     },
     {
       id: 'drv1',
