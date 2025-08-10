@@ -5,7 +5,7 @@ export type VideoItem = {
   embedUrl: string; // YouTube/Drive embed URL
 };
 
-export const HERO_VIDEO_URL = "/media/podcast edit v.1.mp4";
+export const HERO_VIDEO_URL = "https://res.cloudinary.com/dti4mtjlf/video/upload/v1754812369/Pinterest_2_bp5sup.mp4";
 
 export const SOCIAL_LINKS = {
   instagram: 'https://instagram.com/yourhandle',
