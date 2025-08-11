@@ -5,7 +5,8 @@ import Footer from '@/components/portfolio/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { X } from 'lucide-react';
 
-const VideoGallery: React.FC<{ items: VideoItem[]; onSelect: (v: VideoItem) => void }> = ({ items, onSelect }) => (
+// Long form gallery (landscape cards)
+const LongFormGallery: React.FC<{ items: VideoItem[]; onSelect: (v: VideoItem) => void }> = ({ items, onSelect }) => (
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {items.map((v) => (
       <button
@@ -29,7 +30,35 @@ const VideoGallery: React.FC<{ items: VideoItem[]; onSelect: (v: VideoItem) => v
   </div>
 );
 
-const Player: React.FC<{ url: string; onClose: () => void; portrait?: boolean }> = ({ url, onClose, portrait }) => (
+// Short form gallery (vertical cards, 4 per row, bigger size with equal gaps and container padding)
+const ShortFormGallery: React.FC<{ items: VideoItem[]; onSelect: (v: VideoItem) => void }> = ({ items, onSelect }) => (
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+      {items.map((v) => (
+        <button
+          key={v.id}
+          onClick={() => onSelect(v)}
+          className="group relative overflow-hidden rounded-lg border border-border bg-card/70 backdrop-blur text-left focus:outline-none focus:ring-2 focus:ring-ring aspect-[9/16] max-h-[320px] max-w-[180px]"
+          aria-label={`Play ${v.title}`}
+        >
+          <img
+            src={v.thumbUrl}
+            alt={`${v.title} thumbnail`}
+            loading="lazy"
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute bottom-0 left-0 right-0 p-4">
+            <p className="text-sm font-medium">{v.title}</p>
+          </div>
+        </button>
+      ))}
+    </div>
+  </div>
+);
+
+// Player with fixed aspect ratio 16:9 (aspect-video)
+const Player: React.FC<{ url: string; onClose: () => void }> = ({ url, onClose }) => (
   <div className="relative">
     <button
       onClick={onClose}
@@ -38,11 +67,7 @@ const Player: React.FC<{ url: string; onClose: () => void; portrait?: boolean }>
     >
       <X className="h-5 w-5" />
     </button>
-    <div
-      className={`w-full overflow-hidden rounded-lg border border-border bg-black ${
-        portrait ? 'aspect-[16/9]' : 'aspect-video'
-      }`}
-    >
+    <div className="w-full overflow-hidden rounded-lg border border-border bg-black aspect-video">
       <iframe
         className="h-full w-full"
         src={url}
@@ -61,23 +86,20 @@ const VideoEdit: React.FC = () => {
 
   const items = useMemo(() => VIDEO_CATEGORIES[tab], [tab]);
 
-  // Scroll to top when component mounts (initial load)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Scroll to top when tab changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [tab]);
 
-  // Scroll to top when video player opens or closes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [selected]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Helmet>
         <title>Video Editing Portfolio — Long & Short Form</title>
         <meta
@@ -104,16 +126,16 @@ const VideoEdit: React.FC = () => {
           </TabsList>
           <TabsContent value="long">
             {selected ? (
-              <Player url={selected.embedUrl} onClose={() => setSelected(null)} portrait={false} />
+              <Player url={selected.embedUrl} onClose={() => setSelected(null)} />
             ) : (
-              <VideoGallery items={items} onSelect={setSelected} />
+              <LongFormGallery items={items} onSelect={setSelected} />
             )}
           </TabsContent>
           <TabsContent value="short">
             {selected ? (
-              <Player url={selected.embedUrl} onClose={() => setSelected(null)} portrait />
+              <Player url={selected.embedUrl} onClose={() => setSelected(null)} />
             ) : (
-              <VideoGallery items={items} onSelect={setSelected} />
+              <ShortFormGallery items={items} onSelect={setSelected} />
             )}
           </TabsContent>
         </Tabs>

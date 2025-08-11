@@ -145,6 +145,20 @@ All colors MUST be HSL.
   .hover-scale:hover {
     transform: scale(1.05);
   }
+  .text-white-glow {
+  color: white;
+  text-shadow:
+    0 0 5px white,
+    0 0 0px white;
+}
+.text-grey-glow {
+  color: white; /* or keep existing color if you want */
+  text-shadow:
+    0 0 3px grey,
+    0 0 6px grey,
+    0 0 10px grey;
+}
+
 
   .text-gradient {
     background-image: var(--gradient-primary);
