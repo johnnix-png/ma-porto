@@ -24,6 +24,14 @@ export const VIDEO_CATEGORIES: Record<'long' | 'short', VideoItem[]> = {
      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg?si=DR1FFKZEXDpzr2SO',
   isVideoFile: true  // Add this flag to differentiate from iframe URLs
     },
+    {
+      id: 'yt1',
+      title: 'Storytelling',
+      thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1755158188/ex_a9wmre.jpg',
+     embedUrl: 'https://www.youtube-nocookie.com/embed/6NnHPCIEvSw?rel=0&modestbranding=1',
+
+  isVideoFile: true  // Add this flag to differentiate from iframe URLs
+    },
     
   ],
   short: [
