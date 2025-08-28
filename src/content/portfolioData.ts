@@ -35,6 +35,12 @@ export const VIDEO_CATEGORIES: Record<'long' | 'short', VideoItem[]> = {
     
   ],
   short: [
+     {
+      id: 'yt1',
+      title: 'Tiktok',
+      thumbUrl: ' https://res.cloudinary.com/dti4mtjlf/image/upload/v1756361282/musa_hu3vqq.png',
+      embedUrl: 'https://www.youtube.com/embed/MgyacS5_B8Y'
+    },
     {
       id: 'yt1',
       title: 'Tiktok',
