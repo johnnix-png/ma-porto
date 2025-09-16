@@ -35,6 +35,12 @@ export const VIDEO_CATEGORIES: Record<'long' | 'short', VideoItem[]> = {
     
   ],
   short: [
+    {
+      id: 'yt3',
+      title: 'Dance',
+      thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1758002424/image_2025-09-16_090023266_acgttt.png',
+      embedUrl: 'https://www.youtube.com/embed/AfP02MkW1G8',
+    },
      {
       id: 'yt1',
       title: 'Tiktok',
@@ -53,12 +59,7 @@ export const VIDEO_CATEGORIES: Record<'long' | 'short', VideoItem[]> = {
       thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1754901169/ENDK_yolufp.jpg',
       embedUrl: 'https://www.youtube.com/embed/IRG6pEpvjg4',
     },
-    {
-      id: 'yt3',
-      title: 'Dance',
-      thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1754901902/sync_pc7jf7.jpg',
-      embedUrl: 'https://www.youtube.com/embed/z2Yg3hGXg0o',
-    },
+    
      
   ],
 };
@@ -72,8 +73,8 @@ export const GRAPHIC_CATEGORIES: Record<'thumbnail' | 'poster' | 'logo', ImageIt
     { id: 't3', title: 'Lifestyle Vlog', imageUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1754897700/Vector_of_coming_soon_perfect_for_additional_design_coming_soon_design_etc___Premium_Vector_dnfnum.jpg' },
   ],
   poster: [
-    { id: 'p1', title: 'Event Poster', imageUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1754897700/Vector_of_coming_soon_perfect_for_additional_design_coming_soon_design_etc___Premium_Vector_dnfnum.jpg' },
-    { id: 'p2', title: 'Film Flyer', imageUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1754897700/Vector_of_coming_soon_perfect_for_additional_design_coming_soon_design_etc___Premium_Vector_dnfnum.jpg' },
+    { id: 'p1', title: 'Furniture poster', imageUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1758002106/netsi_challenge_y2wm3x.jpg' },
+    { id: 'p2', title: 'Film Flyer', imageUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1758002126/jegenit_xmyvbs.jpg' },
     { id: 'p3', title: 'Promo Graphic', imageUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1754897700/Vector_of_coming_soon_perfect_for_additional_design_coming_soon_design_etc___Premium_Vector_dnfnum.jpg' },
   ],
   logo: [
