@@ -36,16 +36,17 @@ export const VIDEO_CATEGORIES: Record<'long' | 'short', VideoItem[]> = {
   ],
   short: [
     {
+      id: 'yt2',
+      title: 'Reel',
+      thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1758264804/image_2025-09-19_095322268_wa9xg8.png',
+      embedUrl: 'https://www.youtube.com/embed/_EH4arjuuSc',
+    },
+     
+    {
       id: 'yt3',
-      title: 'Dance',
+      title: 'Tiktok',
       thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1758002424/image_2025-09-16_090023266_acgttt.png',
       embedUrl: 'https://www.youtube.com/embed/AfP02MkW1G8',
-    },
-     {
-      id: 'yt1',
-      title: 'Tiktok',
-      thumbUrl: ' https://res.cloudinary.com/dti4mtjlf/image/upload/v1756361282/musa_hu3vqq.png',
-      embedUrl: 'https://www.youtube.com/embed/MgyacS5_B8Y'
     },
     {
       id: 'yt1',
@@ -53,12 +54,21 @@ export const VIDEO_CATEGORIES: Record<'long' | 'short', VideoItem[]> = {
       thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1754900597/promo_clip_ivvhxt.jpg',
       embedUrl: 'https://www.youtube.com/embed/iov0I9QGsks'
     },
-    {
+     {
       id: 'yt2',
       title: 'Voiceover',
       thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1754901169/ENDK_yolufp.jpg',
       embedUrl: 'https://www.youtube.com/embed/IRG6pEpvjg4',
     },
+     {
+      id: 'yt1',
+      title: 'Tiktok',
+      thumbUrl: ' https://res.cloudinary.com/dti4mtjlf/image/upload/v1756361282/musa_hu3vqq.png',
+      embedUrl: 'https://www.youtube.com/embed/MgyacS5_B8Y'
+    },
+   
+    
+   
     
      
   ],
