@@ -19,14 +19,21 @@ export const VIDEO_CATEGORIES: Record<'long' | 'short', VideoItem[]> = {
   long: [
     {
       id: 'yt1',
-      title: 'Podcast edit',
+      title: 'Faceless',
+      thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1758536089/Screenshot_25_ktdfn4.png',
+     embedUrl: 'https://www.youtube.com/embed/Dx9fCECSbz4',
+  isVideoFile: true  // Add this flag to differentiate from iframe URLs
+    },
+    {
+      id: 'yt1',
+      title: 'Podcast',
       thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1754900190/web_thumb_podcast_ezqoaw.jpg',
      embedUrl: 'https://www.youtube.com/embed/J_rrhrb1pQg?si=DR1FFKZEXDpzr2SO',
   isVideoFile: true  // Add this flag to differentiate from iframe URLs
     },
     {
       id: 'yt1',
-      title: 'Storytelling',
+      title: 'Explainer',
       thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1755158188/ex_a9wmre.jpg',
      embedUrl: 'https://www.youtube-nocookie.com/embed/6NnHPCIEvSw?rel=0&modestbranding=1',
 
