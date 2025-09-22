@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
           Your Next Video Editor & Graphics Designer
         </h1>
         <p className="max-w-2xl text-base md:text-lg   animate-fade-in text-grey-glow">
-          I am a self-learner who has developed skills through YouTube and free resources Please take a look at my projects and form your own opinion
+          I am a self learner who has developed skills through YouTube and free resources Please take a look at my projects and form your own opinion
         </p>
       </div>
     </section>
