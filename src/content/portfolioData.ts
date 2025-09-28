@@ -48,6 +48,12 @@ export const VIDEO_CATEGORIES: Record<'long' | 'short', VideoItem[]> = {
       thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1758264804/image_2025-09-19_095322268_wa9xg8.png',
       embedUrl: 'https://www.youtube.com/embed/_EH4arjuuSc',
     },
+    {
+      id: 'yt2',
+      title: 'Reel',
+      thumbUrl: 'https://res.cloudinary.com/dti4mtjlf/image/upload/v1759056797/image_2025-09-28_135315372_n0saw9.png',
+      embedUrl: 'https://www.youtube.com/embed/U8SIn49FNxE',
+    },
      
     {
       id: 'yt3',
